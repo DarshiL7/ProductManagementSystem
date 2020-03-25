@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class="container">
+
+    <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Register User</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form" [formGroup]="registerUser">
+          <div class="card-body">
+            <div class="form-group">
+              <label >User Name</label>
+              <input type="text" class="form-control" placeholder="Enter User Name" formControlName="userName" >
+              <small class="form-text text-danger" *ngIf="registerUser.controls.userName.errors">User name is required<br/></small>
+              
+            </div>
+           
+            <div class="form-group">
+                <label >User Mobile</label>
+                <input type="number" class="form-control"  placeholder="Enter User Mobile" formControlName="userMobile">
+                <small class="form-text text-danger" *ngIf="registerUser.controls.userMobile.errors">Mobile number is required<br/></small>
+            </div>
+            <div class="form-group">
+                <label >User Address</label>
+                <input type="text"  class="form-control"  placeholder="Enter User Address" formControlName="userAddress">
+                <small class="form-text text-danger" *ngIf="registerUser.controls.userAddress.errors">User Address is required<br/></small>
+              
+            </div>
+       
+          </div>
+          
+          <div class="card-footer">
+            <button   type="submit" class="btn btn-primary" (click)="onAddUser()">ADD User</button>
+            
+          </div>
+          
+          <div class="card-footer">
+            <button type="button" class="btn btn-secondary" (click)="onGoBack()">Go to Previous Page</button>
+          </div>  
+            
+          
+        </form>
+      </div>
+
+</div>
